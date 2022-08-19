@@ -1,14 +1,7 @@
 
-import os
 import json
-from urllib import *
-from platform import system
-from datetime import datetime
-import time
-import socket
 import json
 import requests
-import time
 from requests import get
 
 
@@ -30,14 +23,11 @@ def ipinfo():
     print('Latitud: ', data['lat'])
     print('Longitud: ', data['lon'])
     print('Escaneo Completado')
-    time.sleep(1)
     exit()
 
 def ipublic():
     ip = get('https://api.ipify.org').text
     print(f'Tu ip publica es  :  {ip}')
-
-ipublic()
 
 
 def menu():
@@ -53,7 +43,6 @@ def menu():
       option = input("[+] Información IP >>> ")
       if option == "1":
           ipinfo()
-          exit()
 
       elif option == "2":
           ipublic()
